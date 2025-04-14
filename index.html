@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Com você, meu coração acelera</title>
+  <style>
+    body {
+      background: #ffe6f0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      text-align: center;
+      padding-top: 100px;
+      color: #d63384;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 50px;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      position: relative;
+    }
+
+    #sim {
+      background-color: #ff66b2;
+      color: white;
+      position: absolute;
+    }
+
+    #nao {
+      background-color: #ffd1dc;
+      color: #d63384;
+      margin-left: 20px;
+    }
+
+    #mensagem {
+      margin-top: 50px;
+      font-size: 1.4em;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Sabia que meu coração acelera com você?</h1>
+  <button id="sim">Sim</button>
+  <button id="nao">Não</button>
+  <div id="mensagem">Pois então me deve 3 jantares.</div>
+
+  <script>
+    const simBtn = document.getElementById("sim");
+    const naoBtn = document.getElementById("nao");
+    const mensagem = document.getElementById("mensagem");
+
+    simBtn.addEventListener("mouseover", () => {
+      const maxX = window.innerWidth - simBtn.offsetWidth;
+      const maxY = window.innerHeight - simBtn.offsetHeight;
+      const randX = Math.floor(Math.random() * maxX);
+      const randY = Math.floor(Math.random() * maxY);
+      simBtn.style.left = randX + "px";
+      simBtn.style.top = randY + "px";
+    });
+
+    naoBtn.addEventListener("click", () => {
+      mensagem.style.display = "block";
+    });
+  </script>
+</body>
+</html>
